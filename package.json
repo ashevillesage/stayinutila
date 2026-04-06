@@ -1,0 +1,8 @@
+{
+  "name": "stayinutila",
+  "version": "1.0.0",
+  "description": "Stay In Utila - Dockside Suites",
+  "dependencies": {
+    "@netlify/blobs": "^6.0.0"
+  }
+}
