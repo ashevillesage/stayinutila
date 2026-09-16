@@ -52,16 +52,25 @@ function parseICal(text) {
     const block = events[i];
     const dtstart = block.match(/DTSTART(?:;VALUE=DATE)?:(\d{8})/)?.[1];
     const dtend   = block.match(/DTEND(?:;VALUE=DATE)?:(\d{8})/)?.[1];
+    const summary = block.match(/SUMMARY:(.*)/)?.[1]?.trim();
     if (dtstart && dtend) {
       let cur = parseDate(dtstart);
       const end = parseDate(dtend);
       while (cur < end) {
-        blocked.add(formatDate(cur));
+        if (!isRequestedAvailabilityWindowBlock(cur, summary)) {
+          blocked.add(formatDate(cur));
+        }
         cur.setDate(cur.getDate() + 1);
       }
     }
   }
   return Array.from(blocked).sort();
+}
+
+function isRequestedAvailabilityWindowBlock(date, summary) {
+  const isAirbnbAvailabilityWindow = summary === 'Airbnb (Not available)';
+  const isRequestedBookingWindow = date >= new Date(2027, 1, 14) && date < new Date(2027, 4, 1);
+  return isAirbnbAvailabilityWindow && isRequestedBookingWindow;
 }
 
 function parseDate(str) {
