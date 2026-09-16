@@ -386,7 +386,7 @@
               <div class="price-sub">discount</div>
             </div>
           </div>
-          <p class="suite-addons">+$10/day per additional guest (3rd &amp; 4th). Minimum 3-night stay. $35 cleaning fee per stay. Bath towels &amp; bed linens provided. Guests supply own soap &amp; shampoo. No beach towels.</p>
+          <p class="suite-addons">+$10/day per additional guest (3rd &amp; 4th). Minimum 3-night stay. $35 cleaning fee for stays under 28 nights; $100 for stays of 28 nights or more. Bath towels &amp; bed linens provided. Guests supply own soap &amp; shampoo. No beach towels.</p>
           <button class="btn-primary" style="align-self:flex-start;border:none;cursor:pointer;" onclick="openBooking('Sea Horse','2BR · Sleeps 4','$52/$56')" data-suite="seahorse">Book Sea Horse</button>
         </div>
         <div class="suite-gallery">
@@ -453,7 +453,7 @@
               <div class="price-sub">discount</div>
             </div>
           </div>
-          <p class="suite-addons">+$10/day per additional guest (3rd &amp; 4th). Minimum 3-night stay. $35 cleaning fee per stay. Bath towels &amp; bed linens provided. Guests supply own soap &amp; shampoo. No beach towels.</p>
+          <p class="suite-addons">+$10/day per additional guest (3rd &amp; 4th). Minimum 3-night stay. $35 cleaning fee for stays under 28 nights; $100 for stays of 28 nights or more. Bath towels &amp; bed linens provided. Guests supply own soap &amp; shampoo. No beach towels.</p>
           <button class="btn-primary" style="align-self:flex-start;border:none;cursor:pointer;" onclick="openBooking('Spotted Eagle Ray','2BR · Sleeps 4','$52/$56')" data-suite="ray">Book Spotted Eagle Ray</button>
         </div>
         <div class="suite-gallery">
@@ -518,7 +518,7 @@
               <div class="price-sub">discount</div>
             </div>
           </div>
-          <p class="suite-addons">+$10/day per additional guest (3rd &amp; 4th). Minimum 3-night stay. $35 cleaning fee per stay. Bath towels &amp; bed linens provided. Guests supply own soap &amp; shampoo. No beach towels.</p>
+          <p class="suite-addons">+$10/day per additional guest (3rd &amp; 4th). Minimum 3-night stay. $35 cleaning fee for stays under 28 nights; $100 for stays of 28 nights or more. Bath towels &amp; bed linens provided. Guests supply own soap &amp; shampoo. No beach towels.</p>
           <button class="btn-primary" style="align-self:flex-start;border:none;cursor:pointer;" onclick="openBooking('Sea Turtle','2BR · Sleeps 4','$48/$52')" data-suite="turtle">Book Sea Turtle</button>
         </div>
         <div class="suite-gallery">
@@ -584,7 +584,7 @@
               <div class="price-sub">discount</div>
             </div>
           </div>
-          <p class="suite-addons">+$10/day per additional guest (3rd &amp; 4th). Minimum 3-night stay. $35 cleaning fee per stay. Bath towels &amp; bed linens provided. Guests supply own soap &amp; shampoo. No beach towels.</p>
+          <p class="suite-addons">+$10/day per additional guest (3rd &amp; 4th). Minimum 3-night stay. $35 cleaning fee for stays under 28 nights; $100 for stays of 28 nights or more. Bath towels &amp; bed linens provided. Guests supply own soap &amp; shampoo. No beach towels.</p>
           <button class="btn-primary" style="align-self:flex-start;border:none;cursor:pointer;" onclick="openBooking('Angelfish','2BR · Sleeps 4','$52/$56')" data-suite="angelfish">Book Angelfish</button>
         </div>
         <div class="suite-gallery">
@@ -652,7 +652,7 @@
               <div class="price-sub">discount</div>
             </div>
           </div>
-          <p class="suite-addons">Sleeps 2 max. $35 cleaning fee per stay. Bath towels &amp; bed linens provided. Guests supply own soap &amp; shampoo. No beach towels. No pets.</p>
+          <p class="suite-addons">Sleeps 2 max. $35 cleaning fee for stays under 28 nights; $100 for stays of 28 nights or more. Bath towels &amp; bed linens provided. Guests supply own soap &amp; shampoo. No beach towels. No pets.</p>
           <button class="btn-primary" style="align-self:flex-start;border:none;cursor:pointer;" onclick="openBooking('Whaleshark Casita','1BR · Sleeps 2','$72/$79')" data-suite="whaleshark">Book Whaleshark</button>
         </div>
         <div class="suite-gallery">
@@ -833,9 +833,9 @@
               <div class="pay-icon-b" style="background:#003087;font-size:0.6rem;">PP</div>
               <div><div style="font-weight:500;">PayPal</div><div style="font-size:0.7rem;color:#999;">paypal.me/ashevillesage</div></div>
             </a>
-            <a id="b-btn-venmo" href="#" target="_blank" class="pay-btn-b disabled" onclick="onPayClick('Venmo')">
+            <a id="b-btn-venmo" href="https://venmo.com/u/sageturner" target="_blank" rel="noopener noreferrer" class="pay-btn-b disabled" onclick="onPayClick('Venmo')">
               <div class="pay-icon-b" style="background:#008cff;">V</div>
-              <div><div style="font-weight:500;">Venmo</div><div style="font-size:0.7rem;color:#999;">@SageTurner</div></div>
+              <div><div style="font-weight:500;">Venmo</div><div style="font-size:0.7rem;color:#999;">@sageturner</div></div>
             </a>
             <button id="b-btn-zelle" class="pay-btn-b disabled" onclick="zelleWA()">
               <div class="pay-icon-b" style="background:#6d1ed4;">Z</div>
@@ -911,7 +911,7 @@ const SUITES=[
   {key:'angelfish',emoji:'🐠',name:'Angelfish',details:'2BR · Sleeps 4',weeknight:52,weekend:56,maxGuests:4,stripe:'https://buy.stripe.com/YOUR_ANGELFISH_LINK'},
   {key:'whaleshark',emoji:'🦈',name:'Whaleshark Casita',details:'1BR · Sleeps 2',weeknight:72,weekend:79,maxGuests:2,stripe:'https://buy.stripe.com/YOUR_WHALESHARK_LINK'},
 ];
-const CLEANING=35,WKD=[5,6];
+const STANDARD_CLEANING=35,LONG_STAY_CLEANING=100,WKD=[5,6];
 const MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
 const DNAMES=['Su','Mo','Tu','We','Th','Fr','Sa'];
 let selSuite=null,checkIn=null,checkOut=null,bGuests=2,blocked=new Set();
@@ -935,8 +935,8 @@ function updateHint(){const h=document.getElementById('b-date-hint');if(!h)retur
 function changeMonth(d){calM+=d;if(calM<0){calM=11;calY--;}if(calM>11){calM=0;calY++;}renderCal();}
 function changeGuests(d){const max=selSuite?selSuite.maxGuests:4;bGuests=Math.max(1,Math.min(max,bGuests+d));document.getElementById('b-guest-count').textContent=bGuests;const note=document.getElementById('b-guest-note');if(bGuests>2){note.style.display='block';note.textContent='+$10/day for extra guest'+(bGuests>3?'s':'');}else note.style.display='none';updateSummary();}
 function nights(){if(!checkIn||!checkOut)return 0;return Math.round((new Date(checkOut)-new Date(checkIn))/86400000);}
-function calcTotal(){if(!selSuite||!checkIn||!checkOut)return null;const n=nights();if(n<3)return null;let nightly=0,cur=new Date(checkIn);for(let i=0;i<n;i++){nightly+=WKD.includes(cur.getDay())?selSuite.weekend:selSuite.weeknight;cur.setDate(cur.getDate()+1);}const gf=Math.max(0,bGuests-2)*10*n,sub=nightly+gf;let disc=0,discLbl='';if(n>=28){disc=Math.round(sub*0.18);discLbl='Monthly discount (18%)';}else if(n>=7){disc=Math.round(sub*0.10);discLbl='Weekly discount (10%)';}return{n,nightly,gf,sub,disc,discLbl,total:sub-disc+CLEANING};}
-function updateSummary(){const c=calcTotal(),nosel=document.getElementById('b-no-sel'),sum=document.getElementById('b-summary');if(!c){nosel.style.display='block';sum.style.display='none';if(selSuite&&checkIn&&!checkOut)nosel.textContent='Now select your check-out date.';else if(selSuite&&checkIn&&checkOut&&nights()<3)nosel.textContent='Minimum stay is 3 nights.';else nosel.textContent='Select a suite and dates to see your total.';return;}nosel.style.display='none';sum.style.display='block';document.getElementById('b-sum-emoji').textContent=selSuite.emoji;document.getElementById('b-sum-name').textContent=selSuite.name;document.getElementById('b-sum-details').textContent=disp(checkIn)+' → '+disp(checkOut)+' · '+c.n+' nights · '+bGuests+' guest'+(bGuests>1?'s':'');let br=`<div class="price-line"><span class="lbl">$${Math.round(c.nightly/c.n)}/night × ${c.n} nights</span><span>$${c.nightly}</span></div>`;if(c.gf>0)br+=`<div class="price-line"><span class="lbl">Extra guests</span><span>$${c.gf}</span></div>`;if(c.disc>0)br+=`<div class="price-line" style="color:green;"><span class="lbl">${c.discLbl}</span><span>−$${c.disc}</span></div>`;br+=`<div class="price-line"><span class="lbl">Cleaning fee</span><span>$${CLEANING}</span></div>`;br+=`<div class="price-line total"><span class="lbl">Total</span><span>$${c.total}</span></div>`;document.getElementById('b-breakdown').innerHTML=br;const t=c.total;['paypal','venmo','zelle','transfer'].forEach(id=>document.getElementById('b-btn-'+id)?.classList.remove('disabled'));document.getElementById('b-paypal-sub').textContent=`paypal.me/ashevillesage — Send as Friends & Family`;const pp=document.getElementById('b-btn-paypal');if(pp)pp.href=`https://paypal.me/ashevillesage/${t}`;const vm=document.getElementById('b-btn-venmo');if(vm)vm.href=`https://venmo.com/?txn=pay&audience=private&recipients=SageTurner&amount=${t}&note=${encodeURIComponent(selSuite.name+' '+checkIn+' to '+checkOut)}`;}
+function calcTotal(){if(!selSuite||!checkIn||!checkOut)return null;const n=nights();if(n<3)return null;let nightly=0,cur=new Date(checkIn);for(let i=0;i<n;i++){nightly+=WKD.includes(cur.getDay())?selSuite.weekend:selSuite.weeknight;cur.setDate(cur.getDate()+1);}const gf=Math.max(0,bGuests-2)*10*n,sub=nightly+gf;let disc=0,discLbl='';if(n>=28){disc=Math.round(sub*0.18);discLbl='Monthly discount (18%)';}else if(n>=7){disc=Math.round(sub*0.10);discLbl='Weekly discount (10%)';}const cleaningFee=n>=28?LONG_STAY_CLEANING:STANDARD_CLEANING;return{n,nightly,gf,sub,disc,discLbl,cleaningFee,total:sub-disc+cleaningFee};}
+function updateSummary(){const c=calcTotal(),nosel=document.getElementById('b-no-sel'),sum=document.getElementById('b-summary');if(!c){nosel.style.display='block';sum.style.display='none';if(selSuite&&checkIn&&!checkOut)nosel.textContent='Now select your check-out date.';else if(selSuite&&checkIn&&checkOut&&nights()<3)nosel.textContent='Minimum stay is 3 nights.';else nosel.textContent='Select a suite and dates to see your total.';return;}nosel.style.display='none';sum.style.display='block';document.getElementById('b-sum-emoji').textContent=selSuite.emoji;document.getElementById('b-sum-name').textContent=selSuite.name;document.getElementById('b-sum-details').textContent=disp(checkIn)+' → '+disp(checkOut)+' · '+c.n+' nights · '+bGuests+' guest'+(bGuests>1?'s':'');let br=`<div class="price-line"><span class="lbl">$${Math.round(c.nightly/c.n)}/night × ${c.n} nights</span><span>$${c.nightly}</span></div>`;if(c.gf>0)br+=`<div class="price-line"><span class="lbl">Extra guests</span><span>$${c.gf}</span></div>`;if(c.disc>0)br+=`<div class="price-line" style="color:green;"><span class="lbl">${c.discLbl}</span><span>−$${c.disc}</span></div>`;br+=`<div class="price-line"><span class="lbl">Cleaning fee${c.n>=28?' (28+ nights)':''}</span><span>$${c.cleaningFee}</span></div>`;br+=`<div class="price-line total"><span class="lbl">Total</span><span>$${c.total}</span></div>`;document.getElementById('b-breakdown').innerHTML=br;const t=c.total;['paypal','venmo','zelle','transfer'].forEach(id=>document.getElementById('b-btn-'+id)?.classList.remove('disabled'));document.getElementById('b-paypal-sub').textContent=`paypal.me/ashevillesage — Send as Friends & Family`;const pp=document.getElementById('b-btn-paypal');if(pp)pp.href=`https://paypal.me/ashevillesage/${t}`;}
 function onPayClick(method){const c=calcTotal();if(!c)return;pendingMethod=method;document.getElementById('confirm-sub').textContent=selSuite.name+' · '+disp(checkIn)+' → '+disp(checkOut)+' · $'+c.total+' via '+method;document.getElementById('confirm-overlay').classList.add('active');}
 async function confirmPayment(){const c=calcTotal();if(!c)return;document.getElementById('confirm-overlay').classList.remove('active');try{await fetch('/.netlify/functions/record-booking',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({suite:selSuite.key,checkIn,checkOut,totalPaid:c.total,paymentMethod:pendingMethod})});}catch(e){}const msg='New booking!\n🏠 '+selSuite.name+'\n📅 '+checkIn+' → '+checkOut+'\n👥 '+bGuests+' guest(s)\n💰 $'+c.total+' via '+pendingMethod;window.open('https://wa.me/18284071741?text='+encodeURIComponent(msg),'_blank');document.getElementById('b-success-box').style.display='block';let cur=new Date(checkIn),end=new Date(checkOut);while(cur<end){blocked.add(fmt(cur));cur.setDate(cur.getDate()+1);}checkIn=null;checkOut=null;renderCal();updateSummary();window.scrollTo({top:0,behavior:'smooth'});}
 function copyZelle(){navigator.clipboard.writeText('stayinutila@gmail.com').then(()=>{document.getElementById('b-zelle-sub').textContent='✓ Copied!';onPayClick('Zelle');setTimeout(()=>{document.getElementById('b-zelle-sub').textContent='stayinutila@gmail.com — tap to copy';},2500);});}
