@@ -57,7 +57,7 @@ function parseICal(text) {
       let cur = parseDate(dtstart);
       const end = parseDate(dtend);
       while (cur < end) {
-        if (!isSpring2027AvailabilityBlock(cur, summary)) {
+        if (!isRequestedAvailabilityWindowBlock(cur, summary)) {
           blocked.add(formatDate(cur));
         }
         cur.setDate(cur.getDate() + 1);
@@ -67,10 +67,10 @@ function parseICal(text) {
   return Array.from(blocked).sort();
 }
 
-function isSpring2027AvailabilityBlock(date, summary) {
+function isRequestedAvailabilityWindowBlock(date, summary) {
   const isAirbnbAvailabilityWindow = summary === 'Airbnb (Not available)';
-  const isMarchOrApril2027 = date >= new Date(2027, 2, 1) && date < new Date(2027, 4, 1);
-  return isAirbnbAvailabilityWindow && isMarchOrApril2027;
+  const isRequestedBookingWindow = date >= new Date(2027, 1, 14) && date < new Date(2027, 4, 1);
+  return isAirbnbAvailabilityWindow && isRequestedBookingWindow;
 }
 
 function parseDate(str) {
