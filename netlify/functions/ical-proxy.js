@@ -47,11 +47,24 @@ exports.handler = async (event) => {
 
 function parseICal(text) {
   const blocked = new Set();
+  // Airbnb exports its same-day advance-notice rule as a one-night
+  // "Not available" event. Direct bookings may still check in today.
+  const today = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'America/Tegucigalpa',
+    year: 'numeric', month: '2-digit', day: '2-digit',
+  }).format(new Date()).replaceAll('-', '');
+  const tomorrow = parseDate(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const tomorrowKey = formatDate(tomorrow).replaceAll('-', '');
   const events = text.split('BEGIN:VEVENT');
   for (let i = 1; i < events.length; i++) {
     const block = events[i];
     const dtstart = block.match(/DTSTART(?:;VALUE=DATE)?:(\d{8})/)?.[1];
     const dtend   = block.match(/DTEND(?:;VALUE=DATE)?:(\d{8})/)?.[1];
+    const summary = block.match(/^SUMMARY:(.*)\r?$/m)?.[1].trim();
+    if (summary === 'Airbnb (Not available)' && dtstart === today && dtend === tomorrowKey) {
+      continue;
+    }
     if (dtstart && dtend) {
       let cur = parseDate(dtstart);
       const end = parseDate(dtend);
